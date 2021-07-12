@@ -60,5 +60,3 @@ Les push se font généralement en fin de journée, et les pull / merge se font 
 
 Si une nouvelle personne arrive dans le projet et qu'elle n'a pas le repo initial, elle doit faire un git clone <lien vers le depot> : cette commande va créer un dossier avec tous les fichiers du projet.
 
-
-
