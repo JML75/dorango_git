@@ -1,0 +1,64 @@
+GIT est un outil de versioning  => VCS ( Version Control System)
+Il permet d'avoir plusieurs versions des fichiers  qui composent votre application et ainsi travailler en équipe tout en gardant les historiques sur lesquels on travaille.
+
+Il existe plusieurs concurrents de GIT ( SVN,...) mais GIT est le plus utilisé.
+
+GITHUB est ce qu'on applle un hebergeur de repositories (dépôts) GIT . C'est à dire qu'il se charge d'héberger les versions de notre application et ainsi nous pouvons y acceder en ligne.
+
+Il existe plusieurs hébergeurs ( GITBUCKET,... ) mais GITHUB est le plus utilisé.
+
+git init =  initialise un depot (repository) git
+git config --global user.name "prenom nom"
+git config --global user.mail "email"
+git config --list  (daire afiiche la config)   Q pour quitter
+git add  fichier1 fichiers   =>  permet d'ajouter les fichiers à l'index
+exemple ( git add explications.txt index.php)
+git status  => affiche le l'état de l'index
+git log => affiche l'istorique des commit 
+il faut créer un repository sur github.  et copier le lien  projet qu'il donne
+git remote add <nom du remote> <lien du projet> : créer le lien entre le depot local et le depot distant
+git push <remote> <nom de la branche>  => envoie le contenu du dépôt local sur le dépôt en ligne
+dans  l'exemple  // git push origin master
+git branch <nom branche> creation d'une branche sans se positionner dessus 
+git checkout -b <nom branche> creation d'une branche et on se positionne  dessus 
+git checkout  <nom branche> on se prositionne sur la branche 
+git branch -l  => liste les branches
+git branch -D <nom branche> supprime une branche
+// on peut travailler  dans une branche secondaire sans impacter la branche principale 
+// quand on retourne sur la branche prinsipale il n'y a pas les ficheirs créés dabs ma branch secondaire
+
+- sur une branche parallèle, j'ai push (envoyé sur le dépot en ligne) mon travail. (sur la branche inscription, git push origin inscription)
+- j'ai crée une pull request en allant sur le lien indiqué par GIT
+- j'ai laissé un commentaire
+- la personne qui s'occupe de faire les merges (les fusions de branches) ouvre la pull request et confirme la fusion si le travail lui convient
+- les branches (inscription et master) ont fusionné, les collaborateurs doivent récupérer le travail sur la branche master en faisant un git pull origin master
+
+Git clone <lien du depot > permet de récupérer le depot sur l'ordinateur
+
+- On crée d'abord son projet en local (git init)
+- On ajoute les fichiers de son projet (git add, git commit)
+- On crée le dépôt en ligne (github.com)
+- On lie le repository local au repo distant (git remote add origin <lien vers le depot distant>)
+- On push le projet local vers le depot en ligne (git push origin <branche>)
+
+
+- En local, on crée une branche et on se positionne sur celle-ci (git checkout -b <nouvelle branche>)
+- On fait ses modifs de fichiers
+- On ajoute les modifs dans le repo local et on commit (git add, git commit)
+- Une fois que notre travail est terminé, on push sa branche sur le repo en ligne (git push origin <nom de la branche>)
+- On se rend sur github.com et on crée une pull request
+- On laisse un commentaire puis on clique sur "create pull request"
+
+- Ensuite, une autre personne vérifie notre code et clique sur "merge and confirm pull request"
+- Enfin, on supprime la branche en ligne et on peut aussi supprimer la branche en local (git branch -D <nom de la branche>)
+
+- Les autres membres de l'équipe récupèrent notre travail : ils doivent se positionner sur la branche master (git checkout master) et faire un git pull origin master
+
+Il n'y a plus qu'à recommencer le processus à partir de la création d'une nouvelle branche
+
+Les push se font généralement en fin de journée, et les pull / merge se font le matin. Il ne faut jamais push directement sur master sauf si on sait ce qu'on fait.
+
+Si une nouvelle personne arrive dans le projet et qu'elle n'a pas le repo initial, elle doit faire un git clone <lien vers le depot> : cette commande va créer un dossier avec tous les fichiers du projet.
+
+
+
